@@ -18,7 +18,7 @@ learning to read the php official documentation: https://www.php.net/manual/en/
 
 
 11:30 - 1:30: PHP
-1:30 - 2:30: Lunch Break
+1:30 - 2:30: Lunch Break (clubs? esports join, some programming clubs, etc.)
 2:30 - 4:30: PHP
 5:00 - 6:00: Lime Scooter
 6:00: Pick up Package
