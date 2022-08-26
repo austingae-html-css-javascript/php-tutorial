@@ -8,45 +8,49 @@
 </head>
 <body>
   <form method="GET">
-    <input type='text' name='personName' />
-    <button type='submit'>Submit</button>
+    <input type='text' name='firstNum' placeholder='Your First Number'/>
+    <input type='text' name='secondNum' placeholder='Your Second Number' />
+    <select name='operator'>
+      <option value='+'>Add</option>
+      <option value='-'>Minus</option>
+      <option value='*'>Multiply</option>
+      <option value='/'>Divide</option>
+    </select>
+
+    <button type='submit' name='submit' value='submit'>=</button>
   </form>
   <?php
-    $name = $_GET['personName'];
-    echo 'Your name is ' . $name;
-    echo "<br/>";
-    echo strlen($name);
-    echo "<br/>";
-    echo strrev($name);
+    $firstNumber = $_GET['firstNum'];
+    $secondNumber = $_GET['secondNum'];
+    $operator = $_GET['operator'];
+    $submit = $_GET['submit'];
+    echo $firstNumber;
+    echo $operator;
+    echo $secondNumber;
 
-    echo strpos($name, 'i', 3);
-
-    $users = array(5 => "Austin", 2 => "Ryan", 3 => "Walter");
-    echo var_dump($users);
-    echo $users['5'];
-
-    $x = 20;
-    $y = 20;
-    if ($x != $y) {
-      echo "TRUE";
+    if (isset($_GET['submit'])) { //isset() checks whether a variable is declared and is not NULL: https://www.w3schools.com/pHP/func_var_isset.asp#:~:text=The%20isset()%20function%20checks,NULL%2C%20otherwise%20it%20returns%20false.
+      switch ($operator) {
+        case '+':
+          $result = $firstNumber + $secondNumber;
+          echo '=' . $result;
+          break;
+        case '-':
+          $result = $firstNumber - $secondNumber;
+          echo '=' . $result;
+          break;
+        case '*':
+          $result = $firstNumber * $secondNumber;
+          echo '=' . $result;
+          break;
+        case '/':
+          $result = $firstNumber / $secondNumber;
+          echo '=' . $result;
+          break;
+        default:
+          echo "No Answer";
+          break;
+      }
     }
-
-    $x = 5;
-    switch($x) {
-      case 1:
-        echo "the answer is 1";
-        break;
-      case 2:
-        echo "the answer is 2";
-        break;
-      default:
-        echo "this is default";
-        break;
-    }
-
-
-
-
 
   ?>
 </body>
