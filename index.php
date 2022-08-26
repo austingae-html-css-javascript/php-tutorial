@@ -8,50 +8,46 @@
 </head>
 <body>
   <form method="GET">
-    <input type='text' name='firstNum' placeholder='Your First Number'/>
-    <input type='text' name='secondNum' placeholder='Your Second Number' />
-    <select name='operator'>
-      <option value='+'>Add</option>
-      <option value='-'>Minus</option>
-      <option value='*'>Multiply</option>
-      <option value='/'>Divide</option>
-    </select>
-
-    <button type='submit' name='submit' value='submit'>=</button>
+    <input type='text' name='num1' placeholder='Number 1' />
+    <input type='text' name='operator' placeholder='Operator' />
+    <input type='text' name='num2' placeholder='Number 2' />
+    <button type='submit' name='submit' value='submit'>Submit</button>
   </form>
   <?php
-    $firstNumber = $_GET['firstNum'];
-    $secondNumber = $_GET['secondNum'];
-    $operator = $_GET['operator'];
-    $submit = $_GET['submit'];
-    echo $firstNumber;
-    echo $operator;
-    echo $secondNumber;
+    if (isset($_GET['submit'])) { //If the submit button has been clicked, then proceed.
+      $number1 = $_GET['num1'];
+      $operator = $_GET['operator'];
+      $number2 = $_GET['num2'];
 
-    if (isset($_GET['submit'])) { //isset() checks whether a variable is declared and is not NULL: https://www.w3schools.com/pHP/func_var_isset.asp#:~:text=The%20isset()%20function%20checks,NULL%2C%20otherwise%20it%20returns%20false.
-      switch ($operator) {
-        case '+':
-          $result = $firstNumber + $secondNumber;
-          echo '=' . $result;
-          break;
-        case '-':
-          $result = $firstNumber - $secondNumber;
-          echo '=' . $result;
-          break;
-        case '*':
-          $result = $firstNumber * $secondNumber;
-          echo '=' . $result;
-          break;
-        case '/':
-          $result = $firstNumber / $secondNumber;
-          echo '=' . $result;
-          break;
-        default:
-          echo "No Answer";
-          break;
+      //checking if the user's inputs are valid
+      if (is_numeric($number1) == false || is_numeric($number2 == false)) {
+        echo "You have inserted something other than a number. Try again.";
+      }
+      
+      if ($operator != '+' && $operator != '-' && $operator != '*' && $operator != '/') {
+        echo "This operator is not available.";
+      }
+
+      //doing the calculation
+      $result;
+
+      if ($operator == '+') {
+        $result = $number1 + $number2;
+        echo $result;
+      }
+      elseif ($operator == '-') {
+        $result = $number1 - $number2;
+        echo $result;
+      }
+      elseif ($operator == '*') {
+        $result = $number1 * $number2;
+        echo $result;
+      }
+      elseif ($operator == '/') {
+        $result = $number1 / $number2;
+        echo $result;
       }
     }
-
   ?>
 </body>
 </html>

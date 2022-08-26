@@ -1,14 +1,39 @@
 PHP - back-end programming language. 
 To connect your website to a database, you will need a back-end language, such as PHP. 
 
-Variable
+Variables
+
 Getting Data using $_GET[] or $_POST[] from HTML Form that has method=GET or method=POST
 
 
 two types of functions:
-predetermined functions: https://www.php.net/manual/en/funcref.php
+- predetermined functions: https://www.php.net/manual/en/funcref.php
+for example, here is a list of string predetermined functions: https://www.php.net/manual/en/book.strings.php
 
-user-defined functions
+- user-defined functions
+
+
+learning to read the php official documentation: https://www.php.net/manual/en/
+
+
+
+11:30 - 1:30: PHP
+1:30 - 2:30: Lunch Break
+2:30 - 4:30: PHP
+5:00 - 6:00: Lime Scooter
+6:00: Pick up Package
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Tasks:
