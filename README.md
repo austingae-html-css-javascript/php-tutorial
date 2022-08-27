@@ -19,6 +19,7 @@ learning to read the php official documentation: https://www.php.net/manual/en/
 database - a place to store data
 
 
+2:10 - 3:10: PHP and SQL
 
 
 

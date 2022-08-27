@@ -8,18 +8,24 @@
   require 'header.php';
 ?> 
 
+<form method='POST'>
+  <input type='text' name='firstName' placeholder='your first name' />
+  <input type='text' name='lastName' placeholder='your last name' />
+  <input type='text' name='email' placeholder='your email' />
+  <input type='text' name='username' placeholder='your username' />
+  <input type='password' name='password' placeholder='your password' />
+  <button type='submit' name='submit'>Sign Up</button>
+</form>
+
 <?php 
-  $sql = 'SELECT * FROM users;'; //SQL SELECT STATEMENT
-  $result = mysqli_query($conn, $sql); //Use the $sql, aka the SQL SELECT STATEMENT, in $conn, the database.
+  $firstName = $_POST['firstName'];
+  $lastName = $_POST['lastName'];
+  $email = $_POST['email'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
-  $resultCheck = mysqli_num_rows($result);
-
-  if ($resultCheck > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo $row['user_first'];
-      echo '<br>';
-    }
-  }
+  $sqlStatement = "INSERT INTO users (user_first, user_last, user_email, user_uid, user_pwd) VALUES ('$firstName', '$lastName', '$email', '$username', '$password');";
+  $result = mysqli_query($conn, $sqlStatement);
 ?>
 </body>
 </html>
